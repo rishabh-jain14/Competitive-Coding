@@ -1,0 +1,34 @@
+#include<stdio.h>
+
+int main()
+{
+    long x1, x2, v1, v2, k =0;
+    long jumps1 = 0, jumps2 = 0;
+    scanf("%ld %ld %ld %ld", &x1, &v1, &x2, &v2);
+    if((x1<x2&&v1<v2))
+    {
+        printf("NO");
+        return 0;
+    }
+    while(x1!=x2)
+    {
+        x1 = x1 + v1;
+        x2 = x2 + v2;
+        jumps1++;
+        jumps2++;
+        k++;
+        if(k==10000)
+        {break;}
+
+    }
+    if(k==10000)
+    {
+        printf("NO");
+        return 0;
+    }
+    if(jumps1==jumps2)
+        printf("YES");
+    else
+        printf("NO");
+    return 0;
+}
